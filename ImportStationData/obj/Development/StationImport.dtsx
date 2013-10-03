@@ -1,0 +1,2453 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/13/2013 3:28:32 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="VM_W8_DEV"
+  DTS:CreatorName="VM_W8_DEV\Blake"
+  DTS:DTSID="{7C5CBC6A-557A-4E80-8030-ADF1F3482498}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="StationImport"
+  DTS:PackageType="5"
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{E3BB24B6-DB1B-4B9B-891F-CDFB899C8A45}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[StationFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Pipe Separated Station File from QCLCD"
+      DTS:DTSID="{D3F7DDAD-0588-474A-A8B5-FF64C13CD734}"
+      DTS:ObjectName="StationFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="F:\QCLCD_RawData\extract\Site\201308station.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WBAN"
+              DTS:DTSID="{0087E482-6B5F-404B-A4F9-B51EF5AD83D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WMO"
+              DTS:DTSID="{B9D2CDAD-2AAA-4D25-A555-5B9EC6E268E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CallSign"
+              DTS:DTSID="{24E9AA4B-3766-4553-B21B-12780AE3330E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ClimateDivisionCode"
+              DTS:DTSID="{4D088A5C-25D9-41B3-930A-376A57BF1EDC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ClimateDivisionStateCode"
+              DTS:DTSID="{8B944B63-F9C2-43A5-85BA-F010D7951161}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ClimateDivisionStationCode"
+              DTS:DTSID="{D934D1AC-0A6C-4FE5-9090-9A830D1AE1B2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="60"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{4B83F204-F351-49E9-9F82-1096A6B32BF1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{50BFD469-EE5C-4E2E-95BE-4475D348F3D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Location"
+              DTS:DTSID="{44A16FD4-96D1-4A3C-A8A1-E5A44C8AC5A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Latitude"
+              DTS:DTSID="{73CC339B-1D3A-4866-B4A2-BD906EA0D3AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Longitude"
+              DTS:DTSID="{EB0D7935-79D8-4ED5-BB65-2A59F3612657}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GroundHeight"
+              DTS:DTSID="{2D919D32-2069-4A28-8D85-000D15A2755D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StationHeight"
+              DTS:DTSID="{6664F898-074C-4970-9623-CBCC4BA120E6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Barometer"
+              DTS:DTSID="{B0A1145D-DB9F-4964-8419-6EEB60FE6F73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TimeZone"
+              DTS:DTSID="{487A1B6C-D577-47CD-B08F-65B58ADB7B4C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[VM_W8_DEV.QCLCD]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BB44F431-75D9-470E-AC29-0DE444A79882}"
+      DTS:ObjectName="VM_W8_DEV.QCLCD">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=VM_W8_DEV;Initial Catalog=QCLCD;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[VM_W8_DEV.QCLCD_STG]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{22A18BAE-28C8-4361-9EC8-E720C0F75136}"
+      DTS:ObjectName="VM_W8_DEV.QCLCD_STG">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=VM_W8_DEV;Initial Catalog=QCLCD_STG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Clear Station Table"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{ADDCD101-2B4D-4D36-B4A5-E77DD5170953}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clear Station Table">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Clear Station Table\Clear Station Staging Table"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{523AE53B-1FB0-4576-90B3-8D39BD2288B0}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Clear Station Staging Table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{22A18BAE-28C8-4361-9EC8-E720C0F75136}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.StationStg" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Station Staging File"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{48A16A97-DFE2-4517-B767-5B729F6140A3}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Station Staging File">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load Station Staging File\Load Station Staging Table"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{6F9873E9-F226-4791-B63D-E7BE3D7CC215}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Station Staging Table"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Load Station Staging File\Load Station Staging Table\Station File"
+                  componentClassID="{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Station File"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[StationFile]"
+                      connectionManagerRefId="Package.ConnectionManagers[StationFile]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[WBAN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[WBAN]"
+                          length="10"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[WBAN]"
+                          name="WBAN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[WMO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[WMO]"
+                          length="10"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[WMO]"
+                          name="WMO"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[CallSign]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[CallSign]"
+                          length="10"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[CallSign]"
+                          name="CallSign"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[ClimateDivisionCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[ClimateDivisionCode]"
+                          length="5"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[ClimateDivisionCode]"
+                          name="ClimateDivisionCode"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[ClimateDivisionStateCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[ClimateDivisionStateCode]"
+                          length="5"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[ClimateDivisionStateCode]"
+                          name="ClimateDivisionStateCode"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[ClimateDivisionStationCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[ClimateDivisionStationCode]"
+                          length="5"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[ClimateDivisionStationCode]"
+                          name="ClimateDivisionStationCode"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[Name]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                          length="60"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[Name]"
+                          name="Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[State]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[State]"
+                          length="5"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[State]"
+                          name="State"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[Location]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[Location]"
+                          length="50"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[Location]"
+                          name="Location"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[Latitude]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[Latitude]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[Latitude]"
+                          name="Latitude"
+                          precision="18"
+                          scale="6"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[Longitude]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[Longitude]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[Longitude]"
+                          name="Longitude"
+                          precision="18"
+                          scale="6"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[GroundHeight]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[GroundHeight]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[GroundHeight]"
+                          name="GroundHeight"
+                          precision="6"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[StationHeight]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[StationHeight]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[StationHeight]"
+                          name="StationHeight"
+                          precision="6"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[Barometer]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[Barometer]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[Barometer]"
+                          name="Barometer"
+                          precision="5"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[TimeZone]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[TimeZone]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[TimeZone]"
+                          name="TimeZone"
+                          precision="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[WBAN]"
+                          dataType="wstr"
+                          length="10"
+                          name="WBAN" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[WMO]"
+                          dataType="wstr"
+                          length="10"
+                          name="WMO" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[CallSign]"
+                          dataType="wstr"
+                          length="10"
+                          name="CallSign" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[ClimateDivisionCode]"
+                          dataType="wstr"
+                          length="5"
+                          name="ClimateDivisionCode" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[ClimateDivisionStateCode]"
+                          dataType="wstr"
+                          length="5"
+                          name="ClimateDivisionStateCode" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[ClimateDivisionStationCode]"
+                          dataType="wstr"
+                          length="5"
+                          name="ClimateDivisionStationCode" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                          dataType="wstr"
+                          length="60"
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[State]"
+                          dataType="wstr"
+                          length="5"
+                          name="State" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[Location]"
+                          dataType="wstr"
+                          length="50"
+                          name="Location" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[Latitude]"
+                          dataType="numeric"
+                          name="Latitude"
+                          precision="18"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[Longitude]"
+                          dataType="numeric"
+                          name="Longitude"
+                          precision="18"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[GroundHeight]"
+                          dataType="numeric"
+                          name="GroundHeight"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[StationHeight]"
+                          dataType="numeric"
+                          name="StationHeight"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[Barometer]"
+                          dataType="numeric"
+                          name="Barometer"
+                          precision="5" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].ExternalColumns[TimeZone]"
+                          dataType="numeric"
+                          name="TimeZone"
+                          precision="2" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load Station Staging File\Load Station Staging Table\Station Table"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Station Table"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[StationStg]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[VM_W8_DEV.QCLCD_STG]"
+                      connectionManagerRefId="Package.ConnectionManagers[VM_W8_DEV.QCLCD_STG]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].Columns[WMO]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="WMO"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[WMO]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[WMO]" />
+                        <inputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].Columns[CallSign]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="CallSign"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[CallSign]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[CallSign]" />
+                        <inputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].Columns[ClimateDivisionCode]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="ClimateDivisionCode"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[ClimateDivisionCode]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[ClimateDivisionCode]" />
+                        <inputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].Columns[ClimateDivisionStateCode]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="ClimateDivisionStateCode"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[ClimateDivisionStateCode]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[ClimateDivisionStateCode]" />
+                        <inputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].Columns[Location]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Location"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[Location]" />
+                        <inputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].Columns[Latitude]"
+                          cachedDataType="numeric"
+                          cachedName="Latitude"
+                          cachedPrecision="18"
+                          cachedScale="6"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[Latitude]" />
+                        <inputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].Columns[Longitude]"
+                          cachedDataType="numeric"
+                          cachedName="Longitude"
+                          cachedPrecision="18"
+                          cachedScale="6"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[Longitude]" />
+                        <inputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].Columns[GroundHeight]"
+                          cachedDataType="numeric"
+                          cachedName="GroundHeight"
+                          cachedPrecision="6"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[GroundHeight]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[GroundHeight]" />
+                        <inputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].Columns[StationHeight]"
+                          cachedDataType="numeric"
+                          cachedName="StationHeight"
+                          cachedPrecision="6"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[StationHeight]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[StationHeight]" />
+                        <inputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].Columns[Barometer]"
+                          cachedDataType="numeric"
+                          cachedName="Barometer"
+                          cachedPrecision="5"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[Barometer]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[Barometer]" />
+                        <inputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].Columns[TimeZone]"
+                          cachedDataType="numeric"
+                          cachedName="TimeZone"
+                          cachedPrecision="2"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[TimeZone]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[TimeZone]" />
+                        <inputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].Columns[Name]"
+                          cachedDataType="wstr"
+                          cachedLength="60"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[StationName]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[Name]" />
+                        <inputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].Columns[State]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="State"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[StationState]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[State]" />
+                        <inputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].Columns[ClimateDivisionStationCode]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="ClimateDivisionStationCode"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[ClimateDivisionStationCode]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[ClimateDivisionStationCode]" />
+                        <inputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].Columns[WBAN]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="WBAN"
+                          externalMetadataColumnId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[WBAN]"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output].Columns[WBAN]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[WMO]"
+                          dataType="wstr"
+                          length="10"
+                          name="WMO" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[CallSign]"
+                          dataType="wstr"
+                          length="10"
+                          name="CallSign" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[ClimateDivisionCode]"
+                          dataType="wstr"
+                          length="5"
+                          name="ClimateDivisionCode" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[ClimateDivisionStateCode]"
+                          dataType="wstr"
+                          length="5"
+                          name="ClimateDivisionStateCode" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[StationName]"
+                          dataType="wstr"
+                          length="60"
+                          name="StationName" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[StationState]"
+                          dataType="wstr"
+                          length="5"
+                          name="StationState" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
+                          dataType="wstr"
+                          length="50"
+                          name="Location" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                          dataType="numeric"
+                          name="Latitude"
+                          precision="18"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                          dataType="numeric"
+                          name="Longitude"
+                          precision="18"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[GroundHeight]"
+                          dataType="numeric"
+                          name="GroundHeight"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[StationHeight]"
+                          dataType="numeric"
+                          name="StationHeight"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[Barometer]"
+                          dataType="numeric"
+                          name="Barometer"
+                          precision="5" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[TimeZone]"
+                          dataType="numeric"
+                          name="TimeZone"
+                          precision="2" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[ClimateDivisionStationCode]"
+                          dataType="wstr"
+                          length="5"
+                          name="ClimateDivisionStationCode" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[PrimarySite]"
+                          dataType="wstr"
+                          length="1"
+                          name="PrimarySite" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[SiteHasData]"
+                          dataType="wstr"
+                          length="1"
+                          name="SiteHasData" />
+                        <externalMetadataColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input].ExternalColumns[WBAN]"
+                          dataType="wstr"
+                          length="10"
+                          name="WBAN" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Load Station Staging File\Load Station Staging Table.Paths[Flat File Source Output]"
+                  endId="Package\Load Station Staging File\Load Station Staging Table\Station Table.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Load Station Staging File\Load Station Staging Table\Station File.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Push Station Staging to Final"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{4269087B-A56F-4CAC-B4DF-3E6203B204D0}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Push Station Staging to Final">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Push Station Staging to Final\Clear Station Final"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{78E221B6-3658-4BD8-AE42-CC45601D2F01}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Clear Station Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{BB44F431-75D9-470E-AC29-0DE444A79882}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE Station" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Push Station Staging to Final\Station Table Staging to Final"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{2AD3A1B3-4FB6-4002-988B-F51056734830}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Station Table Staging to Final"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Station Final"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Station]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[VM_W8_DEV.QCLCD]"
+                      connectionManagerRefId="Package.ConnectionManagers[VM_W8_DEV.QCLCD]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].Columns[WMO]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="WMO"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[WMO]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[WMO]" />
+                        <inputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].Columns[CallSign]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="CallSign"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[CallSign]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[CallSign]" />
+                        <inputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].Columns[ClimateDivisionCode]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="ClimateDivisionCode"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[ClimateDivisionCode]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[ClimateDivisionCode]" />
+                        <inputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].Columns[ClimateDivisionStateCode]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="ClimateDivisionStateCode"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[ClimateDivisionStateCode]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[ClimateDivisionStateCode]" />
+                        <inputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].Columns[ClimateDivisionStationCode]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="ClimateDivisionStationCode"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[ClimateDivisionStationCode]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[ClimateDivisionStationCode]" />
+                        <inputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].Columns[StationName]"
+                          cachedDataType="wstr"
+                          cachedLength="60"
+                          cachedName="StationName"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[StationName]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[StationName]" />
+                        <inputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].Columns[StationState]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="StationState"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[StationState]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[StationState]" />
+                        <inputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].Columns[Location]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Location"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[Location]" />
+                        <inputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].Columns[Latitude]"
+                          cachedDataType="numeric"
+                          cachedName="Latitude"
+                          cachedPrecision="18"
+                          cachedScale="6"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[Latitude]" />
+                        <inputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].Columns[Longitude]"
+                          cachedDataType="numeric"
+                          cachedName="Longitude"
+                          cachedPrecision="18"
+                          cachedScale="6"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[Longitude]" />
+                        <inputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].Columns[GroundHeight]"
+                          cachedDataType="numeric"
+                          cachedName="GroundHeight"
+                          cachedPrecision="6"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[GroundHeight]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[GroundHeight]" />
+                        <inputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].Columns[StationHeight]"
+                          cachedDataType="numeric"
+                          cachedName="StationHeight"
+                          cachedPrecision="6"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[StationHeight]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[StationHeight]" />
+                        <inputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].Columns[Barometer]"
+                          cachedDataType="numeric"
+                          cachedName="Barometer"
+                          cachedPrecision="5"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[Barometer]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[Barometer]" />
+                        <inputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].Columns[TimeZone]"
+                          cachedDataType="numeric"
+                          cachedName="TimeZone"
+                          cachedPrecision="2"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[TimeZone]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[TimeZone]" />
+                        <inputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].Columns[PrimarySite]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="PrimarySite"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[PrimarySite]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[PrimarySite]" />
+                        <inputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].Columns[WBAN]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="WBAN"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[WbanId]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[WBAN]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[WbanId]"
+                          dataType="wstr"
+                          length="10"
+                          name="WbanId" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[WMO]"
+                          dataType="wstr"
+                          length="10"
+                          name="WMO" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[CallSign]"
+                          dataType="wstr"
+                          length="10"
+                          name="CallSign" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[ClimateDivisionCode]"
+                          dataType="wstr"
+                          length="5"
+                          name="ClimateDivisionCode" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[ClimateDivisionStateCode]"
+                          dataType="wstr"
+                          length="5"
+                          name="ClimateDivisionStateCode" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[ClimateDivisionStationCode]"
+                          dataType="wstr"
+                          length="5"
+                          name="ClimateDivisionStationCode" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[StationName]"
+                          dataType="wstr"
+                          length="60"
+                          name="StationName" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[StationState]"
+                          dataType="wstr"
+                          length="5"
+                          name="StationState" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
+                          dataType="wstr"
+                          length="50"
+                          name="Location" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                          dataType="numeric"
+                          name="Latitude"
+                          precision="18"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                          dataType="numeric"
+                          name="Longitude"
+                          precision="18"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[GroundHeight]"
+                          dataType="numeric"
+                          name="GroundHeight"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[StationHeight]"
+                          dataType="numeric"
+                          name="StationHeight"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[Barometer]"
+                          dataType="numeric"
+                          name="Barometer"
+                          precision="5" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[TimeZone]"
+                          dataType="numeric"
+                          name="TimeZone"
+                          precision="2" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[PrimarySite]"
+                          dataType="wstr"
+                          length="1"
+                          name="PrimarySite" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input].ExternalColumns[SiteHasData]"
+                          dataType="wstr"
+                          length="1"
+                          name="SiteHasData" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging"
+                  componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Station Staging"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[StationStg]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[VM_W8_DEV.QCLCD_STG]"
+                      connectionManagerRefId="Package.ConnectionManagers[VM_W8_DEV.QCLCD_STG]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[WBAN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[WBAN]"
+                          length="10"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[WBAN]"
+                          name="WBAN"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[WMO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[WMO]"
+                          length="10"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[WMO]"
+                          name="WMO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[CallSign]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[CallSign]"
+                          length="10"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[CallSign]"
+                          name="CallSign"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[ClimateDivisionCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[ClimateDivisionCode]"
+                          length="5"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[ClimateDivisionCode]"
+                          name="ClimateDivisionCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[ClimateDivisionStateCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[ClimateDivisionStateCode]"
+                          length="5"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[ClimateDivisionStateCode]"
+                          name="ClimateDivisionStateCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[ClimateDivisionStationCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[ClimateDivisionStationCode]"
+                          length="5"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[ClimateDivisionStationCode]"
+                          name="ClimateDivisionStationCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[StationName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[StationName]"
+                          length="60"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[StationName]"
+                          name="StationName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[StationState]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[StationState]"
+                          length="5"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[StationState]"
+                          name="StationState"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[Location]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[Location]"
+                          length="50"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[Location]"
+                          name="Location"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[Latitude]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[Latitude]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[Latitude]"
+                          name="Latitude"
+                          precision="18"
+                          scale="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[Longitude]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[Longitude]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[Longitude]"
+                          name="Longitude"
+                          precision="18"
+                          scale="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[GroundHeight]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[GroundHeight]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[GroundHeight]"
+                          name="GroundHeight"
+                          precision="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[StationHeight]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[StationHeight]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[StationHeight]"
+                          name="StationHeight"
+                          precision="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[Barometer]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[Barometer]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[Barometer]"
+                          name="Barometer"
+                          precision="5"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[TimeZone]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[TimeZone]"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[TimeZone]"
+                          name="TimeZone"
+                          precision="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[PrimarySite]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[PrimarySite]"
+                          length="1"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[PrimarySite]"
+                          name="PrimarySite"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[SiteHasData]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[SiteHasData]"
+                          length="1"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].Columns[SiteHasData]"
+                          name="SiteHasData"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[WBAN]"
+                          dataType="wstr"
+                          length="10"
+                          name="WBAN" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[WMO]"
+                          dataType="wstr"
+                          length="10"
+                          name="WMO" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[CallSign]"
+                          dataType="wstr"
+                          length="10"
+                          name="CallSign" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[ClimateDivisionCode]"
+                          dataType="wstr"
+                          length="5"
+                          name="ClimateDivisionCode" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[ClimateDivisionStateCode]"
+                          dataType="wstr"
+                          length="5"
+                          name="ClimateDivisionStateCode" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[ClimateDivisionStationCode]"
+                          dataType="wstr"
+                          length="5"
+                          name="ClimateDivisionStationCode" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[StationName]"
+                          dataType="wstr"
+                          length="60"
+                          name="StationName" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[StationState]"
+                          dataType="wstr"
+                          length="5"
+                          name="StationState" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[Location]"
+                          dataType="wstr"
+                          length="50"
+                          name="Location" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[Latitude]"
+                          dataType="numeric"
+                          name="Latitude"
+                          precision="18"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[Longitude]"
+                          dataType="numeric"
+                          name="Longitude"
+                          precision="18"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[GroundHeight]"
+                          dataType="numeric"
+                          name="GroundHeight"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[StationHeight]"
+                          dataType="numeric"
+                          name="StationHeight"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[Barometer]"
+                          dataType="numeric"
+                          name="Barometer"
+                          precision="5" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[TimeZone]"
+                          dataType="numeric"
+                          name="TimeZone"
+                          precision="2" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[PrimarySite]"
+                          dataType="wstr"
+                          length="1"
+                          name="PrimarySite" />
+                        <externalMetadataColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output].ExternalColumns[SiteHasData]"
+                          dataType="wstr"
+                          length="1"
+                          name="SiteHasData" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[WBAN]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[WBAN]"
+                          name="WBAN" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[WMO]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[WMO]"
+                          name="WMO" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[CallSign]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[CallSign]"
+                          name="CallSign" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[ClimateDivisionCode]"
+                          dataType="wstr"
+                          length="5"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[ClimateDivisionCode]"
+                          name="ClimateDivisionCode" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[ClimateDivisionStateCode]"
+                          dataType="wstr"
+                          length="5"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[ClimateDivisionStateCode]"
+                          name="ClimateDivisionStateCode" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[ClimateDivisionStationCode]"
+                          dataType="wstr"
+                          length="5"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[ClimateDivisionStationCode]"
+                          name="ClimateDivisionStationCode" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[StationName]"
+                          dataType="wstr"
+                          length="60"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[StationName]"
+                          name="StationName" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[StationState]"
+                          dataType="wstr"
+                          length="5"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[StationState]"
+                          name="StationState" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[Location]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[Location]"
+                          name="Location" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[Latitude]"
+                          dataType="numeric"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[Latitude]"
+                          name="Latitude"
+                          precision="18"
+                          scale="6" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[Longitude]"
+                          dataType="numeric"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[Longitude]"
+                          name="Longitude"
+                          precision="18"
+                          scale="6" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[GroundHeight]"
+                          dataType="numeric"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[GroundHeight]"
+                          name="GroundHeight"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[StationHeight]"
+                          dataType="numeric"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[StationHeight]"
+                          name="StationHeight"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[Barometer]"
+                          dataType="numeric"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[Barometer]"
+                          name="Barometer"
+                          precision="5" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[TimeZone]"
+                          dataType="numeric"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[TimeZone]"
+                          name="TimeZone"
+                          precision="2" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[PrimarySite]"
+                          dataType="wstr"
+                          length="1"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[PrimarySite]"
+                          name="PrimarySite" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[SiteHasData]"
+                          dataType="wstr"
+                          length="1"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[SiteHasData]"
+                          name="SiteHasData" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Push Station Staging to Final\Station Table Staging to Final.Paths[OLE DB Source Output]"
+                  endId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Push Station Staging to Final\Update SiteHasData Flag"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{01606BEB-B098-494A-B63A-DCD789A45D4A}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update SiteHasData Flag"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{BB44F431-75D9-470E-AC29-0DE444A79882}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="UPDATE&#xA;ST&#xA;SET&#xA;ST.SiteHasData = 'Y'&#xA;FROM&#xA;Station ST INNER JOIN uvw_DailySummaryUniqueWbans UW &#xA;ON ST.WbanId = UW.WbanId&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Push Station Staging to Final.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{3C3FE5E3-3573-417D-8626-2977B1F400B3}"
+          DTS:From="Package\Push Station Staging to Final\Clear Station Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Push Station Staging to Final\Station Table Staging to Final" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Push Station Staging to Final.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{A21F719C-E22D-4957-B487-3721FC286ED6}"
+          DTS:From="Package\Push Station Staging to Final\Station Table Staging to Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Push Station Staging to Final\Update SiteHasData Flag" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Site Staging Cleanup"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{0DAF3C1A-30DE-4EA1-9A14-E5AE232FF3B7}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Site Staging Cleanup">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Site Staging Cleanup\Delete Non-US Stations"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{4FE70357-0B9C-40DC-9655-7E0112DB8388}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete Non-US Stations"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{22A18BAE-28C8-4361-9EC8-E720C0F75136}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="DELETE &#xA;FROM [dbo].[StationStg]&#xA;WHERE&#xA;[WBAN] IS NULL OR [WBAN] = ''" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Station Permanent Category Reference Updates"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{08A7C195-2EA3-45F9-A8BE-C95FEC07937A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Station Permanent Category Reference Updates">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Station Permanent Category Reference Updates\Add New Rows from Stg to Category Reference"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{D4DA278E-4577-473E-AF99-B78A69CBF540}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Add New Rows from Stg to Category Reference"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{22A18BAE-28C8-4361-9EC8-E720C0F75136}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="INSERT INTO StationCategoryReference&#xA;(&#xA;&#x9;[WBAN],&#xA;      [WMO],&#xA;      [CallSign],&#xA;      [ClimateDivisionCode],&#xA;      [ClimateDivisionStateCode],&#xA;      [ClimateDivisionStationCode],&#xA;      [StationName],&#xA;      [StationState],&#xA;      [Location],&#xA;      [Latitude],&#xA;      [Longitude],&#xA;      [GroundHeight],&#xA;      [StationHeight],&#xA;      [Barometer],&#xA;      [TimeZone],&#xA;      [PrimarySite],&#xA;      [SiteHasData]&#xA;)&#xA;SELECT&#xA;&#x9;StationStg.[WBAN],&#xA;      StationStg.[WMO],&#xA;      StationStg.[CallSign],&#xA;      StationStg.[ClimateDivisionCode],&#xA;      StationStg.[ClimateDivisionStateCode],&#xA;      StationStg.[ClimateDivisionStationCode],&#xA;      StationStg.[StationName],&#xA;      StationStg.[StationState],&#xA;      StationStg.[Location],&#xA;      StationStg.[Latitude],&#xA;      StationStg.[Longitude],&#xA;      StationStg.[GroundHeight],&#xA;      StationStg.[StationHeight],&#xA;      StationStg.[Barometer],&#xA;      StationStg.[TimeZone],&#xA;      StationStg.[PrimarySite],&#xA;      StationStg.[SiteHasData]&#xA;FROM&#xA;StationStg  LEFT JOIN StationCategoryReference  ON&#xA;StationStg.WBAN = StationCategoryReference.WBAN&#xA;WHERE&#xA;StationStg.WBAN IS NULL&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Station Permanent Category Reference Updates\Update Category Reference Fields"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F141C136-D96A-47B3-B6A4-5A1A3CF44EC9}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update Category Reference Fields"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{22A18BAE-28C8-4361-9EC8-E720C0F75136}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="Update SCR&#xA;SET&#xA;    SCR.[WMO] = SS.[WMO],&#xA;    SCR.[CallSign] = SS.[CallSign],&#xA;    SCR.[ClimateDivisionCode] = SS.[ClimateDivisionCode],&#xA;    SCR.[ClimateDivisionStateCode] = SS.[ClimateDivisionStateCode],&#xA;    SCR.[ClimateDivisionStationCode] = SS.[ClimateDivisionStationCode],&#xA;    SCR.[StationName] = SS.[StationName],&#xA;    SCR.[StationState] = SS.[StationState],&#xA;    SCR.[Location] = SS.[Location],&#xA;    SCR.[Latitude] = SS.[Latitude],&#xA;    SCR.[Longitude] = SS.[Longitude],&#xA;    SCR.[GroundHeight] = SS.[GroundHeight],&#xA;    SCR.[StationHeight] = SS.[StationHeight],&#xA;    SCR.[Barometer] = SS.[Barometer],&#xA;    SCR.[TimeZone] = SS.[TimeZone]&#xA;FROM&#xA;StationStg SS INNER JOIN StationCategoryReference SCR ON&#xA;SS.WBAN = SCR.WBAN&#xA;&#xA;/* Remember to never update the PrimarySite and SiteHasData fields */ " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Station Permanent Category Reference Updates.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{FC9F20C1-44B1-4E3A-917E-ACC1C3BE70B1}"
+          DTS:From="Package\Station Permanent Category Reference Updates\Add New Rows from Stg to Category Reference"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Station Permanent Category Reference Updates\Update Category Reference Fields" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update Staging PrimarySite Flag"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{E30C0470-22C5-45A3-A82D-EE018ACBA8CF}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Staging PrimarySite Flag">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Update Staging PrimarySite Flag\Update Primary Site Flag from Category Reference"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{09DAF839-FD2D-4BCA-88DE-CF67880D82D5}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update Primary Site Flag from Category Reference"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{22A18BAE-28C8-4361-9EC8-E720C0F75136}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="UPDATE&#xA;SS&#xA;SET&#xA;SS.PrimarySite = SCR.PrimarySite&#xA;FROM&#xA;StationStg SS INNER JOIN StationCategoryReference SCR ON SS.WBAN = SCR.WBAN" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1EA60667-3CFF-4BBF-95BE-090263AFEF5C}"
+      DTS:From="Package\Clear Station Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load Station Staging File" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{7A7B3A88-047C-4454-9750-205BDFD92C29}"
+      DTS:From="Package\Load Station Staging File"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Site Staging Cleanup" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{35A161AF-849F-4416-AE3E-1F71CB834427}"
+      DTS:From="Package\Site Staging Cleanup"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Station Permanent Category Reference Updates" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{F6EAA5BB-C586-4454-B983-8B2A66CCFBAE}"
+      DTS:From="Package\Station Permanent Category Reference Updates"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Update Staging PrimarySite Flag" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{23A6D156-53E6-4BA4-94A1-05216E8DC74C}"
+      DTS:From="Package\Update Staging PrimarySite Flag"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Push Station Staging to Final" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Clear Station Table\Clear Station Staging Table"
+          TopLeft="152,22" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="485,119"
+          Size="485,162"
+          Id="Package\Clear Station Table"
+          TopLeft="110.5,1062074.5" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Load Station Staging File\Load Station Staging Table"
+          TopLeft="176,15" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="497,112"
+          Size="497,155"
+          Id="Package\Load Station Staging File"
+          TopLeft="150.5,1062385" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Push Station Staging to Final\Clear Station Final"
+          TopLeft="116,25" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Push Station Staging to Final\Station Table Staging to Final"
+          TopLeft="105,102" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Push Station Staging to Final\Update SiteHasData Flag"
+          TopLeft="108,185" />
+        <EdgeLayout
+          Id="Package\Push Station Staging to Final.PrecedenceConstraints[Constraint]"
+          TopLeft="198,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16,35"
+              Start="0,0"
+              End="16,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="4,17.5" />
+                  <mssgle:LineSegment
+                    End="12,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12,17.5"
+                    Point2="16,17.5"
+                    Point3="16,21.5" />
+                  <mssgle:LineSegment
+                    End="16,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Push Station Staging to Final.PrecedenceConstraints[Constraint 1]"
+          TopLeft="214,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8,41"
+              Start="0,0"
+              End="-8,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5"
+                    Point2="0,20.5"
+                    Point3="-4,20.5" />
+                  <mssgle:LineSegment
+                    End="-4,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4,20.5"
+                    Point2="-8,20.5"
+                    Point3="-8,24.5" />
+                  <mssgle:LineSegment
+                    End="-8,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="456,282"
+          Size="456,325"
+          Id="Package\Push Station Staging to Final"
+          TopLeft="168.5,1063415" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Site Staging Cleanup\Delete Non-US Stations"
+          TopLeft="140,27" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="490,124"
+          Size="490,167"
+          Id="Package\Site Staging Cleanup"
+          TopLeft="159.5,1062615" />
+        <NodeLayout
+          Size="302,42"
+          Id="Package\Station Permanent Category Reference Updates\Add New Rows from Stg to Category Reference"
+          TopLeft="96,29" />
+        <NodeLayout
+          Size="238,42"
+          Id="Package\Station Permanent Category Reference Updates\Update Category Reference Fields"
+          TopLeft="130,118" />
+        <EdgeLayout
+          Id="Package\Station Permanent Category Reference Updates.PrecedenceConstraints[Constraint]"
+          TopLeft="248,71">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="487,215"
+          Size="487,258"
+          Id="Package\Station Permanent Category Reference Updates"
+          TopLeft="159.5,1062847" />
+        <NodeLayout
+          Size="317,42"
+          Id="Package\Update Staging PrimarySite Flag\Update Primary Site Flag from Category Reference"
+          TopLeft="91,35" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="472,132"
+          Size="472,175"
+          Id="Package\Update Staging PrimarySite Flag"
+          TopLeft="162.5,1063171" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="353,1062236.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46,148.5"
+              Start="0,0"
+              End="46,141">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,70.25"
+                    Point2="0,74.25"
+                    Point3="4,74.25" />
+                  <mssgle:LineSegment
+                    End="42,74.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42,74.25"
+                    Point2="46,74.25"
+                    Point3="46,78.25" />
+                  <mssgle:LineSegment
+                    End="46,141" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="401.75,1062540">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,75"
+              Start="0,0"
+              End="0,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="403.75,1062782">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="400.75,1063105">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="397.5,1063346">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69"
+              Start="0,0"
+              End="0,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Station Staging File\Load Station Staging Table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Load Station Staging File\Load Station Staging Table\Station File"
+          TopLeft="221,112" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Load Station Staging File\Load Station Staging Table\Station Table"
+          TopLeft="227,358" />
+        <EdgeLayout
+          Id="Package\Load Station Staging File\Load Station Staging Table.Paths[Flat File Source Output]"
+          TopLeft="334.75,154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,204"
+              Start="0,0"
+              End="0,196.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,196.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Station Staging File\Load Station Staging Table\Station Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Push Station Staging to Final\Station Table Staging to Final">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging"
+          TopLeft="146,87" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final"
+          TopLeft="149,290" />
+        <EdgeLayout
+          Id="Package\Push Station Staging to Final\Station Table Staging to Final.Paths[OLE DB Source Output]"
+          TopLeft="253,129">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,161"
+              Start="0,0"
+              End="0,153.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,153.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Push Station Staging to Final\Station Table Staging to Final\Station Final">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Push Station Staging to Final\Station Table Staging to Final\Station Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
